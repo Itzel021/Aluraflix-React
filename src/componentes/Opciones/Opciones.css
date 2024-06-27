@@ -1,0 +1,14 @@
+.container-opciones {
+  width: 100%;
+  display: flex;
+  color: white;
+  justify-content: space-between;
+}
+.opcion {
+  width: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  gap: 8px;
+}
