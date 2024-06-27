@@ -26,7 +26,7 @@
 - JavaScript
 - React
 
-## ▶️  Demo.
+## ▶️  Demo
 
 
 ---
