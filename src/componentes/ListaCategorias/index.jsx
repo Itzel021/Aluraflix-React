@@ -1,22 +1,26 @@
 import "./ListaCategorias.css"
 
-const ListaCategorias = (props) => {
-    
+import React from 'react';
+
+function ListaCategorias(props) {
+
     const manejarCambio = (e) =>{
-        //console.log("Cambio", e.target.value)
-        props.actualizarEquipo(e.target.value)
+        //console.log("Cambio ", e.target.value)
+        props.actualizarValor(e.target.value)
     }
 
-    return <div className="lista-opciones">
-        <label>Equipos</label>
-        <select value={props.valor} onChange={manejarCambio}>
-            <option value="" disable defaultValue="" hidden>Seleccionar categoria</option>
-            {props.categoria.map((categoria, index) => <option key={index} value={categoria}>{categoria}</option>)}
-            
-            
-            
-        </select>
-    </div>
+    return (
+        <div className="lista-opciones">
+            <label>{props.titulo}</label>
+            <select onChange={manejarCambio}>
+                {props.opciones.map((opcion) => (
+                    <option key={opcion.id} value={opcion.id} >
+                        {opcion.titulo}
+                    </option>
+                ))}
+            </select>
+        </div>
+    );
 }
 
 export default ListaCategorias

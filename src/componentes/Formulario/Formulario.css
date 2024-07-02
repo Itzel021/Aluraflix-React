@@ -5,6 +5,9 @@
   text-align: center;
   padding: 50px;
 }
+.row-form {
+  display: flex;
+}
 .row-form-button{
   width: 60%;
   margin-top: 10px;

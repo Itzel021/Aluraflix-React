@@ -108,13 +108,20 @@ function App() {
     }
   ])
 
+      //Registrar video
+      const registrarVideo = (video) =>{
+        console.log("Nuevo video: ", video)
+        //Spread operator, agregar el nuevo elemento, copiar los existentes y agregar el nuevo
+        //actualizarColaboradores([...colaboradores, colaborador])
+      }
+
   return (
     <Router>
       <Navbar />
       <Routes>
         <Route path='/' element={<Home 
                                 categorias={categorias} videos={videos} />} />
-        <Route path='/nuevo-video' element={<FormPage categorias={categorias} />} />
+        <Route path='/nuevo-video' element={<FormPage categorias={categorias}  registrarVideo={registrarVideo}/>} />
         <Route path='*' element={<Page404 />} />
       </Routes>
       <Footer />
