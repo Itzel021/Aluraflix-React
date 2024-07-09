@@ -13,6 +13,15 @@ import FormPage from "./paginas/FormPage";
 import Page404 from "./paginas/Page404";
 
 function App() {
+  const [videoBanner, setVideoBanner] = useState({
+    id: uuidv4(),
+    titulo: "Challenge React",
+    categoria: "Front End",
+    imagen: "img/img-card.png",
+    video: "https://www.youtube.com/watch?v=PztCEdIJITY",
+    descripcion: "Este challenge es una forma de aprendizaje. Es un mecanismo donde podrás comprometerte en la resolución de un problema para poder aplicar todos los conocimientos adquiridos en la formación React.",
+  });
+
   const [categorias, actualizarCategorias] = useState([
     {
       id: uuidv4(),
@@ -38,7 +47,7 @@ function App() {
       categoria: "Front End",
       imagen: "front-1.png",
       video: "https://www.youtube.com/watch?v=PztCEdIJITY",
-      descripcion: "aa ",
+      descripcion: "Este challenge es una forma de aprendizaje. Es un mecanismo donde podrás comprometerte en la resolución de un problema para poder aplicar todos los conocimientos adquiridos en la formación React.",
     },
     {
       id: uuidv4(),
@@ -119,7 +128,7 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={<Home categorias={categorias} videos={videos} />}
+          element={<Home categorias={categorias} videos={videos} videoBanner={videoBanner} />}
         />
         <Route
           path="/nuevo-video"

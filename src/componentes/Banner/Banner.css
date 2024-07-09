@@ -1,25 +1,47 @@
 .banner {
-    background-image: url('../../assets/img/Portada-alura.png');
-    background-size: cover;
-    background-position: center;
-    height: 600px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-align: center;
-  }
-  
-  .banner-content {
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    border-radius: 10px;
-  }
-  
-  .carousel-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-  }
+  background-image: url("../../assets/img/Portada-alura.png");
+  background-size: cover;
+  background-position: center;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.banner-content {
+  gap: 20px;
+  border-radius: 10px;
+}
+
+.video-list {
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.video-item {
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+}
+
+.description {
+  width: 50%;
+  justify-content: flex-start;
+  font-size: x-large;
+}
+.card{
+  width: 40%;
+}
+
+.card img{
+  width: 400px;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 0 10px #82CFFA;
+}
