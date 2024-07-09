@@ -1,7 +1,9 @@
 import React from 'react';
 import './Banner.css';
 
-const Banner = () => {
+const Banner = (props) => {
+  const {videos} = props
+
   return (
     <div className="banner">
       <div className="banner-content">

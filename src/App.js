@@ -1,20 +1,18 @@
 /* Importaciones */
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from "react";
-import { v4 as uuidv4 } from 'uuid'
+import { v4 as uuidv4 } from "uuid";
 
 /*  Importar componentes */
 import Navbar from "./componentes/Navbar/index";
-import Footer from './componentes/Footer';
+import Footer from "./componentes/Footer";
 
 /*  Importar paginas */
-import Home from "./paginas/Home"
+import Home from "./paginas/Home";
 import FormPage from "./paginas/FormPage";
 import Page404 from "./paginas/Page404";
 
-
 function App() {
-
   const [categorias, actualizarCategorias] = useState([
     {
       id: uuidv4(),
@@ -40,7 +38,7 @@ function App() {
       categoria: "Front End",
       imagen: "front-1.png",
       video: "https://www.youtube.com/watch?v=PztCEdIJITY",
-      descripcion: "aa "
+      descripcion: "aa ",
     },
     {
       id: uuidv4(),
@@ -48,7 +46,7 @@ function App() {
       categoria: "Front End",
       imagen: "front-2.png",
       video: "https://www.youtube.com/watch?v=GJfOSoaXk4s",
-      descripcion: " bb"
+      descripcion: " bb",
     },
     {
       id: uuidv4(),
@@ -56,7 +54,7 @@ function App() {
       categoria: "Front End",
       imagen: "front-3.png",
       video: "https://www.youtube.com/watch?v=rpvrLaBQwgg",
-      descripcion: "aa "
+      descripcion: "aa ",
     },
     {
       id: uuidv4(),
@@ -64,7 +62,7 @@ function App() {
       categoria: "Back End",
       imagen: "back-1.png",
       video: "https://www.youtube.com/watch?v=t-iqt1b2qqk",
-      descripcion: "aa "
+      descripcion: "aa ",
     },
     {
       id: uuidv4(),
@@ -72,7 +70,7 @@ function App() {
       categoria: "Back End",
       imagen: "back-2.png",
       video: "https://www.youtube.com/watch?v=cLLKVd5CNLc",
-      descripcion: "aa "
+      descripcion: "aa ",
     },
     {
       id: uuidv4(),
@@ -80,7 +78,7 @@ function App() {
       categoria: "Back End",
       imagen: "back-3.png",
       video: "https://www.youtube.com/watch?v=EoPvlE85XAQ",
-      descripcion: "aa "
+      descripcion: "aa ",
     },
     {
       id: uuidv4(),
@@ -88,7 +86,7 @@ function App() {
       categoria: "Innovación y gestión",
       imagen: "innova-1.png",
       video: "https://www.youtube.com/watch?v=vhwspfvI52k&t=292s",
-      descripcion: "aa "
+      descripcion: "aa ",
     },
     {
       id: uuidv4(),
@@ -96,7 +94,7 @@ function App() {
       categoria: "Innovación y gestión",
       imagen: "innova-2.png",
       video: "https://www.youtube.com/watch?v=YhR7Zp8NUzE",
-      descripcion: "aa "
+      descripcion: "aa ",
     },
     {
       id: uuidv4(),
@@ -104,25 +102,32 @@ function App() {
       categoria: "Innovación y gestión",
       imagen: "innova-3.png",
       video: "https://www.youtube.com/watch?v=6N3OkLCfK-0",
-      descripcion: "aa "
-    }
-  ])
+      descripcion: "aa ",
+    },
+  ]);
 
-      //Registrar video
-      const registrarVideo = (video) =>{
-        console.log("Nuevo video: ", video)
-        //Spread operator, agregar el nuevo elemento, copiar los existentes y agregar el nuevo
-        //actualizarColaboradores([...colaboradores, colaborador])
-      }
-
+  //Registrar video
+  const registrarVideo = (video) => {
+    console.log("Nuevo video: ", video);
+    //Spread operator, agregar el nuevo elemento, copiar los existentes y agregar el nuevo
+    actualizarVideos([...videos, video]);
+  };
+  
   return (
     <Router>
       <Navbar />
       <Routes>
-        <Route path='/' element={<Home 
-                                categorias={categorias} videos={videos} />} />
-        <Route path='/nuevo-video' element={<FormPage categorias={categorias}  registrarVideo={registrarVideo}/>} />
-        <Route path='*' element={<Page404 />} />
+        <Route
+          path="/"
+          element={<Home categorias={categorias} videos={videos} />}
+        />
+        <Route
+          path="/nuevo-video"
+          element={
+            <FormPage categorias={categorias} registrarVideo={registrarVideo} />
+          }
+        />
+        <Route path="*" element={<Page404 />} />
       </Routes>
       <Footer />
     </Router>

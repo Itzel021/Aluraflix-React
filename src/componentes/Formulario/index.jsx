@@ -13,6 +13,8 @@ function Formulario(props) {
     const [video, setVideo] = useState('');
     const [descripcion, setDescripcion] = useState('');
 
+    const { registrarVideo } = props
+
     const envioDatos = (e) => {
         //console.log("Manejar envio")
         e.preventDefault();
@@ -23,10 +25,11 @@ function Formulario(props) {
             video,
             descripcion,
         };
-        console.log(datosVideo);
-        props.registrarVideo(envioDatos)
+        //console.log(datosVideo);
+        registrarVideo(datosVideo)
         
     };
+   
 
     return (
         <div className="container-form">
@@ -73,8 +76,8 @@ function Formulario(props) {
                     />
                 </div>
                 <div className="row-form-button">
-                    <Boton titulo="GUARDAR" type="submit" />
-                    <Boton titulo="LIMPIAR" type="button" />
+                    <Boton titulo="GUARDAR" type="submit"/>
+                    <Boton titulo="LIMPIAR" type="reset" />
                 </div>
             </form>
         </div>

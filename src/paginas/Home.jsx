@@ -7,7 +7,7 @@ const Home = (props) => {
   
   return (
       <div className="container">
-        <Banner />
+        <Banner videos = {videos} />
         {categorias.map((categoria, index) => {
         // Filtrar videos por la categoría actual
         const videosFiltrados = videos.filter(video => video.categoria === categoria.titulo);
