@@ -2,13 +2,15 @@ import "./Opciones.css"
 import { MdDeleteForever } from "react-icons/md";
 import { FaEdit } from "react-icons/fa";
 
-const Opciones = () => {
+const Opciones = (props) => {
+    const {eliminarVideo, id} = props
+    
     return <div className="container-opciones">
         <div className="opcion">
-            <MdDeleteForever /> Eliminar
+            <MdDeleteForever className="icon" onClick={()=>eliminarVideo(id)} /> Eliminar
         </div>
         <div className="opcion">
-            <FaEdit /> Editar
+            <FaEdit className="icon"/> Editar
         </div>
     </div>
 }

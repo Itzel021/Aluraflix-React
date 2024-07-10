@@ -121,6 +121,13 @@ function App() {
     //Spread operator, agregar el nuevo elemento, copiar los existentes y agregar el nuevo
     actualizarVideos([...videos, video]);
   };
+
+  //Eliminar video
+  const eliminarVideo = (id) => {
+    console.log("Eliminar video", id)
+    const nuevosVideos = videos.filter((video) => video.id !== id)
+    actualizarVideos(nuevosVideos)
+  }
   
   return (
     <Router>
@@ -128,7 +135,12 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={<Home categorias={categorias} videos={videos} videoBanner={videoBanner} />}
+          element={<Home 
+            categorias={categorias} 
+            videos={videos} 
+            videoBanner={videoBanner}
+            eliminarVideo={eliminarVideo}
+            />}
         />
         <Route
           path="/nuevo-video"
