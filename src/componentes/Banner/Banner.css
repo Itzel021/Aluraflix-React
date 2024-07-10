@@ -8,20 +8,24 @@
   align-items: center;
   color: white;
   text-align: center;
+  width: 100%;
 }
-
 .banner-content {
-  gap: 20px;
+  gap: 10px;
   border-radius: 10px;
+  align-items: center;
+  margin-top: 10px;
 }
 
 .video-list {
   display: flex;
+  justify-content: center;
+  padding-left: 5px;
+  margin-left: 0px;
 }
 
 a {
   text-decoration: none;
-  color: white;
 }
 
 .video-item {
@@ -33,14 +37,29 @@ a {
 .description {
   width: 50%;
   justify-content: flex-start;
-  font-size: x-large;
+  text-align: left; 
+  color: white;
+  padding-left: 0%;
+  margin-left: 0%;
 }
+
+.description p {
+  margin: 0;
+  font-size: 1.2em;
+  color: white;
+}
+
+.description h2{
+  font-size: 2em;
+  color: white;
+}
+
 .card{
   width: 40%;
 }
 
 .card img{
-  width: 400px;
+  width: 500px;
   height: auto;
   border-radius: 15px;
   box-shadow: 0 0 10px #82CFFA;

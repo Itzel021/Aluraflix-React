@@ -18,7 +18,7 @@ function App() {
     titulo: "Challenge React",
     categoria: "Front End",
     imagen: "img/img-card.png",
-    video: "https://www.youtube.com/watch?v=PztCEdIJITY",
+    video: "https://www.youtube.com/watch?v=ov7vA5HFe6w",
     descripcion: "Este challenge es una forma de aprendizaje. Es un mecanismo donde podrás comprometerte en la resolución de un problema para poder aplicar todos los conocimientos adquiridos en la formación React.",
   });
 

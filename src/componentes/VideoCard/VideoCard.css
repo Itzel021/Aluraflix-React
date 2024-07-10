@@ -5,11 +5,12 @@
     transition: transform 0.2s ease-in-out;
     cursor: pointer;
     width: 100%;
-    max-width: 280px;
+    max-width: 300px;
+    margin-top: 10px;
   }
   
   .video-card:hover {
-    transform: translateY(-2px);
+    transform: translateY(-1px);
   }
   
   .thumbnail {

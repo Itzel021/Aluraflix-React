@@ -8,11 +8,10 @@ const Banner = (props) => {
   return (
     <div className="banner">
       <div className="banner-content">
-        <h1>Bienvenido a Nuestro Sitio</h1>
         <div className="video-list">    
             <div className="video-item">
               <div className='description'>
-                <TituloCategoria titulo={videoBanner.categoria} color={"#82CFFA"}/>
+                <TituloCategoria titulo={videoBanner.categoria} color={"#82CFFA"} />
                 <h2>{videoBanner.titulo}</h2>
                 <p>{videoBanner.descripcion}</p>
               </div>

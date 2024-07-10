@@ -1,4 +1,5 @@
 .container-listaVideos{
+    box-sizing: border-box;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.9);
     display: flex;
