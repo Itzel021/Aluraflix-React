@@ -20,4 +20,7 @@
     text-transform: uppercase;
 }
 
-
+.btn-guardar{
+    color: #2271D1;
+    border: 2px solid #2271D1;
+}

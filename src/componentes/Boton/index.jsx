@@ -1,9 +1,11 @@
 import React from 'react';
 import "./Boton.css";
 
-function Boton({ titulo, botonActivo, onClick }) {
+function Boton({ titulo, botonActivo, onClick, botonGuardar}) {
   return (
-    <button className={`${botonActivo ? 'boton-activo' : 'boton'}`} onClick={onClick}>
+    <button
+      className={`${botonActivo ? 'boton-activo' : 'boton'} ${botonGuardar ? 'btn-guardar' : ' '}`} o
+      nClick={onClick}>
       {titulo}
     </button>
   );

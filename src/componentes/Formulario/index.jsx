@@ -16,7 +16,6 @@ function Formulario(props) {
     const { registrarVideo } = props
 
     const envioDatos = (e) => {
-        //console.log("Manejar envio")
         e.preventDefault();
         const datosVideo = {
             titulo,
@@ -25,11 +24,14 @@ function Formulario(props) {
             video,
             descripcion,
         };
-        //console.log(datosVideo);
         registrarVideo(datosVideo)
-        
     };
-   
+
+    const limpiarFormulario = () => {
+        const formulario = document.querySelector('form');
+        console.log("Limpiando formulario...")
+        formulario.reset();
+    };
 
     return (
         <div className="container-form">
@@ -76,8 +78,8 @@ function Formulario(props) {
                     />
                 </div>
                 <div className="row-form-button">
-                    <Boton titulo="GUARDAR" type="submit"/>
-                    <Boton titulo="LIMPIAR" type="reset" />
+                    <Boton titulo="GUARDAR" type="submit" botonGuardar={true} />
+                    <Boton titulo="LIMPIAR" onClick={limpiarFormulario} />
                 </div>
             </form>
         </div>
