@@ -129,7 +129,10 @@ function App() {
     actualizarVideos(nuevosVideos)
   }
   
-  
+  //Editar video
+  const editarVideo = () =>{
+    console.log("Editar video")
+  }
 
   return (
     <Router>
@@ -142,6 +145,7 @@ function App() {
             videos={videos} 
             videoBanner={videoBanner}
             eliminarVideo={eliminarVideo}
+            editarVideo={editarVideo}
             />}
         />
         <Route

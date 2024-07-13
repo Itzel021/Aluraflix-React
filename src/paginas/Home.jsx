@@ -3,7 +3,7 @@ import ListaVideos from '../componentes/ListaVideos'
 
 const Home = (props) => {
 
-  const{categorias,videos, videoBanner, eliminarVideo} = props
+  const{categorias,videos, videoBanner, eliminarVideo } = props
   
   return (
       <div className="container">

@@ -5,7 +5,7 @@ import "./VideoCard.css"
 import imageMap from '../../assets/imageMap';
 
 const VideoCard = (props) => {
-  const { titulo, imagen, color, link, id, eliminarVideo} = props;
+  const { titulo, imagen, color, link, id, eliminarVideo } = props;
 
   const colorCard = {
     border: `2px solid ${color}`,
