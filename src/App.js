@@ -6,6 +6,7 @@ import { v4 as uuidv4 } from "uuid";
 /*  Importar componentes */
 import Navbar from "./componentes/Navbar/index";
 import Footer from "./componentes/Footer";
+import Modal from "./componentes/Modal/"
 
 /*  Importar paginas */
 import Home from "./paginas/Home";
@@ -55,7 +56,7 @@ function App() {
       categoria: "Front End",
       imagen: "front-2.png",
       video: "https://www.youtube.com/watch?v=GJfOSoaXk4s",
-      descripcion: " bb",
+      descripcion: "Aprenderas JavaScript de forma sencilla.",
     },
     {
       id: uuidv4(),
@@ -63,7 +64,7 @@ function App() {
       categoria: "Front End",
       imagen: "front-3.png",
       video: "https://www.youtube.com/watch?v=rpvrLaBQwgg",
-      descripcion: "aa ",
+      descripcion: "Como trabajar en equipo de manera efectiva",
     },
     {
       id: uuidv4(),
@@ -71,7 +72,7 @@ function App() {
       categoria: "Back End",
       imagen: "back-1.png",
       video: "https://www.youtube.com/watch?v=t-iqt1b2qqk",
-      descripcion: "aa ",
+      descripcion: "Spring una forma de hacer las cosas",
     },
     {
       id: uuidv4(),
@@ -79,7 +80,7 @@ function App() {
       categoria: "Back End",
       imagen: "back-2.png",
       video: "https://www.youtube.com/watch?v=cLLKVd5CNLc",
-      descripcion: "aa ",
+      descripcion: "Aprende y almacena datos",
     },
     {
       id: uuidv4(),
@@ -87,7 +88,7 @@ function App() {
       categoria: "Back End",
       imagen: "back-3.png",
       video: "https://www.youtube.com/watch?v=EoPvlE85XAQ",
-      descripcion: "aa ",
+      descripcion: "Organizate!!",
     },
     {
       id: uuidv4(),
@@ -95,7 +96,7 @@ function App() {
       categoria: "Innovación y gestión",
       imagen: "innova-1.png",
       video: "https://www.youtube.com/watch?v=vhwspfvI52k&t=292s",
-      descripcion: "aa ",
+      descripcion: "Importante en el mundo laboral.",
     },
     {
       id: uuidv4(),
@@ -103,7 +104,7 @@ function App() {
       categoria: "Innovación y gestión",
       imagen: "innova-2.png",
       video: "https://www.youtube.com/watch?v=YhR7Zp8NUzE",
-      descripcion: "aa ",
+      descripcion: "Investiga y preparate",
     },
     {
       id: uuidv4(),
@@ -111,7 +112,7 @@ function App() {
       categoria: "Innovación y gestión",
       imagen: "innova-3.png",
       video: "https://www.youtube.com/watch?v=6N3OkLCfK-0",
-      descripcion: "aa ",
+      descripcion: "Es importante conocerlas...",
     },
   ]);
 
@@ -129,11 +130,19 @@ function App() {
     actualizarVideos(nuevosVideos)
   }
   
-  //Editar video
-  const editarVideo = () =>{
-    console.log("Editar video")
-  }
+  //Actualizar videos
+  const handleSave = (updatedVideo) => {
+    const nuevosVideos = videos.map((video) =>
+      video.id === updatedVideo.id ? updatedVideo : video
+    );
+    actualizarVideos(nuevosVideos);
+  };
 
+  //Editar video
+  const [videoSeleccionado, setVideoSeleccionado] = useState(null);
+  
+
+ 
   return (
     <Router>
       <Navbar />
@@ -145,7 +154,7 @@ function App() {
             videos={videos} 
             videoBanner={videoBanner}
             eliminarVideo={eliminarVideo}
-            editarVideo={editarVideo}
+            editarVideo={(video) => setVideoSeleccionado(video)}
             />}
         />
         <Route
@@ -156,6 +165,7 @@ function App() {
         />
         <Route path="*" element={<Page404 />} />
       </Routes>
+      <Modal video={videoSeleccionado} onClose={() => setVideoSeleccionado(null)} onSave={handleSave} />
       <Footer />
     </Router>
   );

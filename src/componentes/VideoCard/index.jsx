@@ -5,7 +5,7 @@ import "./VideoCard.css"
 import imageMap from '../../assets/imageMap';
 
 const VideoCard = (props) => {
-  const { titulo, imagen, color, link, id, eliminarVideo } = props;
+  const { titulo, imagen, color, link, id, eliminarVideo, editarVideo} = props;
 
   const colorCard = {
     border: `2px solid ${color}`,
@@ -33,7 +33,7 @@ const imageSrc = isExternalUrl(imagen) ? imagen : imageMap[imagen];
         <img className="thumbnail" src={imageSrc} alt={titulo} />
       </a>
         <div className="info" style={colorInfo}>
-          <Opciones eliminarVideo={eliminarVideo} id={id} />
+          <Opciones eliminarVideo={eliminarVideo} id={id} editarVideo = {editarVideo}/>
         </div>
     </div>
   );
